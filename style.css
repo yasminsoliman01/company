@@ -1,0 +1,723 @@
+/* font awesome cdn link*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/*google fonts cdn link*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --white:#fff;
+    --black:#171717;
+    --bg-color:#1c1c1e;
+    --light-white:#999;
+    --box-shadow: 0 .5rem 1rem #000;
+    --border: .1rem solid rgba(255,255,255,.1);
+    --gradient:linear-gradient(65deg, deeppink, coral) ;
+
+}
+
+*{
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none; border: none;
+}
+*::selection{
+    background: var(--white);
+    color: var(--black);
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: .1rem;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--white);
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+body{
+    background: var(--black);
+    padding-bottom: 8rem;
+}
+section{
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    background: var(--gradient);
+    color: var(--white);
+    border-radius: 5rem;
+    transition: .2s linear;
+}
+.btn:hover{
+    background: var(--white);
+    color: var(--black);
+}
+
+.header{
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    background-color: var(--bg-color);
+    border-bottom: var(--border);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+.header .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+.header .flex .logo{
+    font-size: 2rem;
+    color: var(--white);
+}
+.header .flex .logo i{
+    margin-right: .5rem;
+    color: deeppink;
+}
+.header .flex .btn{
+    margin-top: 0;
+}
+
+.navbar{
+    position: fixed;
+    bottom: 2rem;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+.navbar .nav{
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    gap: 1rem;
+    border-radius: .5rem;
+}
+.navbar .nav a{
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    transition: .2s linear;
+    color: var(--white);
+}
+.navbar .nav a:hover{
+    background: var(--gradient);
+}
+.navbar .nav a i{
+display: none;
+}
+.home .flex{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.home .flex .image{
+    flex: 1 1 30rem;
+    text-align: center;
+    overflow: hidden;
+}
+.home .flex .image::before{
+content: '';
+position: absolute;
+top: 20; left: 80; /*85*/
+height: 25rem;
+bottom:30; 
+width: 5rem;
+background: var(--gradient);
+animation: animate1 4s cubic-bezier(.29,1,.26,1.12) infinite;
+}
+.home .flex .image::after{
+    content: '';
+    position: absolute;
+    bottom: 0; right: 15;/*15*/ 
+    height: 25rem;
+    width: 5rem;
+    background: var(--gradient);
+    animation: animate2 4s cubic-bezier(.29,1,.26,1.12) infinite;
+    }
+
+
+/*newletter*/
+.newletter{
+    background: var(--bg-color);
+}
+.newletter .news{
+    text-align: center;
+}
+.newletter .news h3{
+    font-size: 3rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
+.newletter .news p{
+    line-height: 1,8;
+    font-size: 1.6rem;
+    color: var(--light-white);
+    padding: 1rem 0;
+    max-width: 50rem;
+    margin: 1rem auto;
+}
+.newletter .news form{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.newletter .news  .input{
+    border-radius: 5rem;
+     padding: 1.2rem 1.5rem;
+     font-size: 1.8rem;
+     color: var(--white);
+     border: var(--border);
+     background-color: var(--black);
+     width: 30rem;
+     text-transform: none;
+}
+.newletter .news .input::placeholder{
+    text-transform: capitalize;
+}
+
+.newletter .news form .btn{
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+@keyframes animate1{
+    0%, 100%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(100%);
+    }
+}
+@keyframes animate2{
+    0%, 100%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(-100%);
+    }
+}
+.home .flex .image img{
+    width: 68%;
+    height: 50rem;
+   object-fit: contain;    
+}
+.home .flex .content{
+    flex: 1 1 50rem;
+}
+.home .flex .content h3{
+    font-size:4rem;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+.home .flex .content p{
+    line-height: 1.8;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    color: var(--light-white);
+}
+
+
+/*services*/
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.services .box-container .box{
+text-align: center;
+padding: 2.5rem 2rem;
+background-color:var(--bg-color) ;
+}
+.services .box-container .box i{
+    font-size: 4rem;
+    background: var(--gradient);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+.services .box-container .box h3{
+font-size: 2rem;
+margin: .5rem 0;
+color: var(--white);
+}
+.services .box-container .box p{
+    line-height: 1.8;
+    font-size: 1.4rem;
+    color: var(--light-white);
+    padding: 1rem 0;
+}
+.about{
+    background: var(--bg-color);
+}
+.about .flex{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+}
+.about .flex .content{
+    flex: 1 1 40rem;
+}
+.about .flex .image{
+    flex: 1 1 40rem;
+}
+.about .flex .image img{
+    width: 100%;
+    height: 50rem;
+    object-fit: contain;
+}
+.about .flex .content h3{
+    font-size: 3rem;
+    color:var(--white);
+    margin-bottom: .5rem;
+}
+.about .flex .content p{
+    font-size: 1.6rem;
+    color:var(--light-white);
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+.reviews .flex{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.reviews .flex .content h3{
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: .5rem;
+}
+.reviews .flex .content p{
+    line-height: 1.8rem;
+    font-size: 1.6rem;
+    color: var(--light-white);
+    padding: 1rem 0;
+}
+.reviews .flex .content .controls{
+    margin-top: .5rem;
+    display: flex;
+    gap: 1rem;
+}
+.reviews .flex .content .controls div{
+height: 5rem;
+width: 5rem;
+line-height: 4.9rem;
+font-size: 2.5rem;
+color: var(--white);
+background: var(--bg-color);
+text-align: center;
+cursor: pointer;
+}
+.reviews .flex .content .controls div:hover{
+    background: var(--gradient);
+}
+.reviews .flex .slides-container{
+    flex: 1 1 40rem;
+    perspective: 1000px;
+}
+.reviews .flex .slides-container .slide{
+    background: var(--bg-color);
+    padding:2rem 2.5rem;
+    transform-style: preserve-3d;
+    animation:slide.2s linear ;
+    display: none; /*خفيت صور الرفيو*/
+    
+}
+@keyframes slide {
+    0%{
+        transform: rotateX(180deg); /*كل رفيو هتلف معايا*/
+    }
+}
+
+.reviews .flex .slides-container .slide.active{
+    display: block;
+}
+.reviews .flex .slides-container .slide > *{
+    animation: slideContent .2s linear .2s backwards;
+}
+@keyframes slidescontainet{
+0%{
+    opacity: 0;
+    transform: scale(.9);
+}
+}
+.reviews .flex .slides-container .slide .text{
+    font-size: 1.6rem;
+    color: var(--light-white);
+    line-height: 1.8;
+}
+
+.reviews .flex .slides-container .slide .user{
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: var(--border);
+}
+.reviews .flex .slides-container .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.reviews .flex .slides-container .slide .user h3{
+    font-size: 2rem;
+    color: var(--white);
+}
+.reviews .flex .slides-container .slide .user .stars{
+    margin-top: .5rem;
+    color: coral;
+}
+.reviews .flex .slides-container .slide .user .fa-quote-right{
+font-size: 5rem;
+color:transparent;
+background: var(--gradient);
+background-clip: text;
+margin-left: auto;
+}
+
+/*download section"*/
+
+.download{
+background: var(--bg-color);
+}
+.download .flex{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.download .flex .image{
+    flex: 1 1 40rem;
+}
+.download .flex .image img{
+    width: 100%;
+    height: 40rem;
+    object-fit: contain;/* ويت ركتجعل المحتوي يكون مناسب و الحفاظ على نسبة العرض و الارتفاع */
+}
+.download .flex .content{
+    flex: 1 1 40rem;
+}
+.download .flex .content h3{
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: .5rem;
+}
+.download .flex .content p{
+    line-height: 1.8;
+    font-size: 1.6rem;
+    color: var(--light-white);
+    padding: .5rem 0;
+}
+.download .flex .content .links{
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.download .flex .content a{
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size:1.8rem;
+    border: .5rem;
+}
+.download .flex .content a i{
+    margin-right: .5rem;
+}
+.download .flex .content a:first-child{
+    background-color: var(--white);
+    color: var(--black);
+}
+.download .flex .content a:first-child{
+    background-color: var(--white);
+    color: var(--black);
+}
+.download .flex .content a:first-child:hover{
+background: var(--gradient);
+color: white;
+}
+.download .flex .content a:last-child{
+    background-color: var(--bg-color);
+    color: var(--white);
+    border: var(--border);
+}
+.download .flex .content a:last-child:hover{
+    background: var(--gradient);
+    border-color: transparent;
+}
+.pricing .toggle-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 3rem;
+}
+.pricing .toggle-buttons .button {
+    padding: 1rem;
+    width: 15rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    border-radius: .5rem;
+    background: var(--bg-color);
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+.pricing .toggle-buttons .button .active,
+.pricing .toggle-buttons .button:hover{
+background: var(--gradient);
+}
+
+.pricing .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+.pricing .box-container .box{
+    padding:2rem 2.5rem;
+    background-color: var(--bg-color);
+    border-radius: .5rem;
+}
+.pricing .box-container .box .year{
+   display: none;
+}
+
+
+.pricing .box-container .box h3{
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: .5rem;
+}
+.pricing .box-container .box .price{
+    animation: price .2s linear;
+    transform-origin: top;
+}
+@keyframes price {
+    0%{
+        opacity: .5;
+        transform: scaleY(.5);
+    }
+}
+
+.pricing .box-container .box .price span:first-child{
+    color:coral;
+    font-size: 2.5rem;
+
+}
+.pricing .box-container .box .price span:last-child{
+    color:var(--light-white);
+    font-size: 1.5rem;
+    
+}
+.pricing .box-container .box .list {
+    margin-top: 1.5rem;
+    border-top: var(--border);
+    padding-top: 1rem;
+}
+
+.pricing .box-container .box .list p{
+padding: 1rem 0;
+font-size: 1.6rem;
+}
+.pricing .box-container .box .list p i{
+    margin-left: 1rem;
+}
+.pricing .box-container .box .list p .fa-circle-check{
+color: limegreen;
+}
+.pricing .box-container .box .list p .fa-circle-xmark{
+    color:tomato;
+    }
+.pricing .box-container .box .list p span{
+color: var(--light-white);
+}
+.pricing .box-container .box .btn{
+    width: 100%;
+    text-align: center;
+    border-radius: .5rem; /*btn chose plan*/
+}
+.pricing .box-container .box:nth-child(2){
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+
+.brands{
+    overflow: hidden;
+    display: flex; /*دول كتبتهك عشان يكون شريط طويل*/
+    gap: 10rem;
+}
+.brands .brands-container{
+    display: flex;
+    gap: 10rem;
+    animation: brands 10s linear infinite ;
+}
+@keyframes brands{
+    0%{
+    transform: translateX(0%);
+    }
+    0%{
+        transform: translateX(-100%); 
+        }
+    }
+.brands:hover .brands-container{
+animation-play-state: paused;
+}
+
+.brands .brands-container img{
+    height: 5rem;
+    width: 10rem;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,27rem );
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.footer .box-container .box h3{
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.footer .box-container .box a{
+    font-size: 1.6rem;
+    color: var(--light-white);
+    display: block;
+    padding: 1rem 0;
+}
+.footer .box-container .box a i{
+    color: coral;
+    margin-right: .5rem;
+}
+.footer .box-container .box a:hover{
+    color: var(--white);
+}
+.footer .credit{
+    padding: 3rem 2rem;
+    margin-top: var(--border);
+    text-align: center;
+    font-size: 2rem;
+    color: var(--light-white);
+}
+.footer .credit span{
+    color: transparent;
+    background: var(--gradient);
+    background-clip: text;
+}
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+    html{
+        font-size: 55%; /*55*/
+    }
+}
+
+@media (max-width:768px){
+    body{
+        padding-bottom: 7rem; /*7rem*/
+    }
+    .navbar{
+        bottom: 0;
+    }
+    .navbar .nav{
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        box-shadow: none;
+        border-radius: 0;
+        padding: .5rem ;
+        width: 100%;
+    }
+    .navbar .nav a {
+        padding: .5rem ;
+    }
+    .navbar .nav a span{
+        font-size: 1.5rem;
+    }  
+    .navbar .nav a i{
+        display: block;
+        font-size: 2.5rem;
+        margin-bottom: .5rem;
+    }
+    .navbar .nav a:hover{
+        background: none;
+    }
+    .navbar .nav a:hover span{
+        color: deeppink;
+    }
+    .home .flex .content h3 {
+        font-size: 2.0rem;
+    }
+
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .reviews .flex .content h3{
+        font-size: 2.5rem;
+    }
+    .download .flex .content h3{
+        font-size: 2.5rem;
+    }
+    .download .flex .content a{
+        width: 100%;
+        text-align: center;
+    }
+    .newletter .news .input{
+       width: 100%; 
+    }
+    }
